@@ -1,0 +1,99 @@
+abstract class Chert {
+    String say;
+    abstract void eat();
+    abstract void sleep();
+    abstract void talk();
+}
+
+class Hare extends Chert {
+    Hare(){
+      say="AAAAAAA";
+    }
+    public void eat() {
+        System.out.println("Заяц ест.");
+    }
+
+    public void sleep() {
+        System.out.println("Заяц спит.");
+    }
+
+    public void talk() {
+        System.out.println(say);
+    }
+}
+
+class Tiger extends Chert {
+    String eat22="тигр хавает";
+    String sleep12="тигр дремлет";
+    Tiger(){
+      say="RRRRRR";  
+    }
+    public void eat() {
+        System.out.println(eat22);
+    }
+
+    public void sleep() {
+        System.out.println(sleep12);
+    }
+
+    public void talk() {
+        System.out.println(say);
+    }
+}
+
+class Cat extends Tiger {
+    Cat(){
+        eat22="Кошка лакает";
+    sleep12="Кошка посапывает";
+        
+    }
+    
+}
+
+public class AnimalProgram {
+    public static void main(String[] args) {
+        Chert chert = new Chert() {
+            
+            public void eat() {
+                System.out.println("Черт жрет.");
+            }
+
+            public void sleep() {
+                System.out.println("Черт спит.");
+            }
+
+            public void talk() {
+                System.out.println("Черт ревет");
+            }
+        };
+Chert[] m = Chert[3];
+
+        Hare hare = new Hare();
+        Tiger tiger = new Tiger();
+        Cat cat = new Cat();
+        cat.say="mew";
+        m[0]=hare;
+        m[1]=cat;
+        m[2]=tiger;
+        m[3]=hare;
+        for(int i=0;i<4;i++)
+        m[i]. Talk();
+        
+
+        chert.eat();
+        chert.sleep();
+        chert.talk();
+
+        hare.eat();
+        hare.sleep();
+        hare.talk();
+
+        tiger.eat();
+        tiger.sleep();
+        tiger.talk();
+
+        cat.eat();
+        cat.sleep();
+        cat.talk();
+    }
+}
