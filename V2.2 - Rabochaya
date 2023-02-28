@@ -1,0 +1,102 @@
+abstract class Animal {
+    public abstract void eat();
+    public abstract void sleep();
+    public abstract void talk();
+}
+
+class Hare extends Animal {
+    public void eat() {
+        System.out.println("Заяц точит");
+    }
+    public void sleep() {
+        System.out.println("Заяц спит");
+    }
+    public void talk() {
+        System.out.println("ААААААААА");
+    }
+}
+
+class Tiger extends Animal {
+    String eat22="Тигр хавает";
+    String sleep12="тигр дремлет";
+    String say34="RURU";
+    Tiger(){
+        say34="RAR";
+    }
+    public void eat() {
+        System.out.println(eat22);
+    }
+
+    public void sleep() {
+        System.out.println(sleep12);
+    }
+
+    public void talk() {
+        System.out.println(say34);
+    }
+}
+
+class Chert extends Animal {
+    private Hare hare;
+    private Tiger tiger;
+    private Cat cat;
+
+    public Chert() {
+        hare = new Hare();
+        tiger = new Tiger();
+        cat = new Cat();
+    }
+
+    public void eat() {
+        hare.eat();
+        tiger.eat();
+        cat.eat();
+    }
+    public void sleep() {
+        hare.sleep();
+        tiger.sleep();
+        cat.sleep();
+    }
+    public void talk() {
+        hare.talk();
+        tiger.talk();
+        cat.talk();
+    }
+}
+
+class Cat extends Tiger {
+    Cat() {
+        eat22 = "Кошка лакает";
+        sleep12 = "Кошка посапывает";
+    }
+    public void eat() {
+        System.out.println(eat22);
+    }
+
+    public void sleep() {
+        System.out.println(sleep12);
+    }
+
+        public void talk() {
+
+            System.out.println("Meow");
+        }
+
+        public void talk(int times) {
+            for (int i = 0; i < times; i++) {
+                talk();
+            }
+        }
+    }
+
+    public class AnimalProgram {
+        public static void main(String[] args) {
+            Animal animal1 = new Chert();
+            animal1.eat();
+            animal1.sleep();
+            animal1.talk();
+
+            Cat cat = new Cat();
+            cat.talk(3);
+        }
+    }
